@@ -1,9 +1,26 @@
-<script type='text/javascript'>
-window.$linebase=[];
-window.LINEBASE_ORG_ID='60dc2c25c0f76b122f8d998d';
-window.LINEBASE_WORKSPACE_ID='60dc2c25c0f76b593f8d998e';
-(function(){d=document;s=d.createElement('script');
-s.src='https://lb-cw-dev.fireapps.tech/main.js';
-s.async=1;
-d.getElementsByTagName('head')[0].appendChild(s);})();
-</script>
+<!DOCTYPE html>
+<head>
+  <title>Pusher Test</title>
+  <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('a99e704c101eb5dd20a7', {
+      cluster: 'ap1'
+    });
+
+    var channel = pusher.subscribe('ompress-images-channel-68607574329');
+    channel.bind('compress-images', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script>
+</head>
+<body>
+  <h1>Pusher Test</h1>
+  <p>
+    Try publishing an event to channel <code>my-channel</code>
+    with event name <code>my-event</code>.
+  </p>
+</body>
