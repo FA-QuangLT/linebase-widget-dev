@@ -11,7 +11,7 @@
       cluster: 'ap1'
     });
 
-    var channel = pusher.subscribe('ompress-images-channel-68607574329');
+    var channel = pusher.subscribe('compress-images-channel-68607574329');
     channel.bind('compress-images', function(data) {
       alert(JSON.stringify(data));
     });
